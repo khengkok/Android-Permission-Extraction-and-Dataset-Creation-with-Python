@@ -6,7 +6,7 @@ Android Permission Extraction and Database Creation
 """
 from os import system as sys
 import os, time
-import xml.etree.ElementTree as ET
+import xml.etree.ElementTree as ET 
 import numpy as np
 import csv
 
@@ -101,6 +101,8 @@ def Extract():
                     print('Error')
                     print(TargetApk)
                     pass
+                except Exception:
+                    print('Unknown error, skip {}'.format(TargetApk))
                 sys("rm -f -R " + UnpackedDir)
                 print()
                 CurrentApk += 1
